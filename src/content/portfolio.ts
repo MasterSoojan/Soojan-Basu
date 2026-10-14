@@ -14,7 +14,7 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/soojan-basu-b75572291/",
   resume: "/Soojan_Basu_Resume.pdf",
   introduction:
-    "Computer Science student and AI Product intern building across software and hardware. I work on AI automation, full-stack applications, Android, and embedded systems—with a focus on reliable, real-world applications.",
+    "BCA student with AI Product internship experience building Python-based LLM automation and report-generation workflows, alongside full-stack web and embedded-systems projects. Interested in software engineering, backend development, and AI applications; comfortable working across application logic, databases, and deployment configuration.",
 } as const;
 
 export const experience = [
@@ -26,28 +26,42 @@ export const experience = [
     // hard-coded account of the candidate's current role inside the component.
     headlineRole: "AI Product Intern",
     shortCompany: "Humanize Business Solutions",
-    dates: "August 2026 – Present",
-    mode: "Kolkata · In office",
+    dates: "1 Aug 2026 – 30 Oct 2026",
+    mode: "Kolkata · On-site",
     title: "Turning AI reasoning into reliable workflows.",
     points: [
-      "Developed a competitive-analysis pipeline with Python and LangChain: web-context extraction, validation, structured LLM outputs, and automated reports.",
-      "Used asyncio to evaluate implementation, migration, and AMS support concurrently, including evidence, limitations, and AI-assisted effort estimates.",
-      "Kept scoring, normalization, validation, and effort calculations in deterministic Python; added AI-engine fallbacks and Word/PDF report generation.",
+      "Developed a Python-based competitive analysis pipeline combining web-context extraction, LLM evaluation, evidence validation, structured outputs, and automated Word/PDF report generation.",
+      "Used asyncio to evaluate New Implementation, Migration, and AMS Support stages concurrently; separated LLM-generated assessments from deterministic scoring, normalization, validation, N/A handling, and effort calculations.",
+      "Implemented fallback across multiple AI engines and structured capability assessments, evidence, limitations, and AI-assisted effort estimates.",
+      "Designed and implemented key functionality for a custom CMS powering Humanize's landing page, enabling authenticated content management through a React frontend and Node.js/Express/TypeScript backend with MongoDB Atlas/Mongoose.",
+      "Applied DRY/KISS principles and maintainability-focused refactoring, directing implementation, reviewing logic, and making targeted code and UX changes with AI coding assistance.",
+      "Configured and verified AWS deployment components, including CloudFront routing and cache invalidation; improved SEO fallback behavior, backend-failure handling, and multiple areas of the landing-page UX.",
     ],
-    tags: ["Python", "LangChain", "asyncio", "Structured outputs"],
+    tags: [
+      "Python",
+      "LangChain",
+      "asyncio",
+      "Structured outputs",
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "AWS",
+    ],
   },
   {
     id: "documentation",
     company: "Humanize Business Solutions Pvt Ltd",
     role: "Intern · AI Product",
-    dates: "January – April 2026",
+    dates: "19 Jan 2026 – 30 Apr 2026",
     mode: "Remote",
     title: "Making product knowledge easier to use.",
     points: [
       "Produced and organized video recordings for project documentation and AI Product team activities.",
-      "Restructured Word documents to improve organization, formatting consistency, and usability.",
+      "Created and restructured .docx, .xlsx, and .pptx documents to improve organization, consistency, and usability.",
     ],
-    tags: ["Product documentation", "Video production", "Microsoft Word"],
+    tags: ["Product documentation", "Video production", "MS Office"],
   },
 ];
 
@@ -65,76 +79,72 @@ type Project = {
 // Add project URLs only after confirming the version being described.
 export const projects: Project[] = [
   {
+    id: "cookies",
+    title: "VRCookiez",
+    category: "Full-stack web",
+    label: "01 / Commercial platform",
+    graphic: "FROM OVEN TO ONLINE",
+    summary: "A deployed, responsive web platform for a cookie business.",
+    points: [
+      "Built and deployed a responsive commercial web application with modern CSS and reusable UI components.",
+      "Integrated Supabase for relational data, storage, and authenticated administrative controls; configured deployment through GitHub and Vercel.",
+    ],
+    stack: ["React", "Vite", "Supabase", "Vercel"],
+  },
+  {
     id: "beacon",
     title: "Smart Safety Beacon",
     category: "Embedded + Android",
-    label: "01 / Connected hardware",
+    label: "02 / Connected hardware",
     graphic: "BLE ↔ ANDROID",
     summary:
       "An environmental and health-monitoring wearable connected to an Android companion.",
     points: [
-      "Integrated MAX30102, BME680, and an OLED on an ESP32-C3 shared I²C bus, with filtered heart-rate data and real-time gas monitoring.",
-      "Built a custom BLE GATT telemetry pipeline in Kotlin for heart rate, air quality, device time, and system status.",
-      "Connected physical SOS and hazard thresholds to Android foreground-service alerts; added OLED navigation and display timeout.",
+      "Worked on integrating MAX30102 biometric, BME680 environmental, and SSD1306 OLED modules over I²C; implemented filtered heart-rate processing and live air-quality monitoring.",
+      "Contributed to the Android companion app and BLE GATT telemetry pipeline, including hazard thresholds, physical SOS triggering, and Android foreground-service alerts.",
     ],
     stack: ["ESP32-C3", "C++", "Kotlin", "BLE / GATT", "I²C"],
   },
   {
-    id: "cookies",
-    title: "VRCookiez",
-    category: "Full-stack web",
-    label: "02 / Commercial platform",
-    graphic: "FROM OVEN TO ONLINE",
-    summary: "A deployed, responsive web platform for a cookie business.",
-    points: [
-      "Built the commercial interface with React, Vite, and responsive CSS.",
-      "Integrated Supabase relational storage, file storage, and authenticated administrative controls.",
-      "Set up deployment through GitHub and Vercel.",
-    ],
-    stack: ["React", "Vite", "Supabase", "PostgreSQL", "Vercel"],
-  },
-  {
-    id: "credify",
-    title: "Credify",
-    category: "Web + Android",
-    label: "03 / Trust verification",
-    graphic: "VERIFY. UNDERSTAND.",
-    summary:
-      "Trust-verification workflows and a companion mobile security application.",
-    points: [
-      "Developed document-scanning workflows and fraud-reporting functionality.",
-      "Built an Android companion for suspicious-communication alerts.",
-      "Implemented normalized database structures and Node.js verification-tracking logic.",
-    ],
-    stack: ["Node.js", "Kotlin", "MySQL"],
-  },
-  {
     id: "vehicle",
-    title: "PID Line-Follower & Dual-Mode Vehicle",
+    title: "PID-Controlled Line-Follower & Dual-Mode Vehicle",
     category: "Embedded systems",
-    label: "04 / Robotics",
+    label: "03 / Robotics",
     graphic: "SENSE → STEER",
     summary:
       "An ESP32 robotic vehicle with closed-loop line tracking and custom circuitry.",
     points: [
-      "Integrated an eight-channel IR array, TB6612FNG motor driver, and custom power circuitry.",
-      "Calibrated the PID controller and assembled and soldered the hardware.",
+      "Helped build an ESP32 robotic vehicle using an 8-channel IR sensor array, TB6612FNG motor driver, and custom power circuitry.",
+      "Contributed to coding, closed-loop PID line-tracking calibration, board assembly, and soldering.",
     ],
     stack: ["ESP32", "C / C++", "PID control", "Circuit prototyping"],
   },
   {
     id: "disaster",
-    title: "Disaster Management Learning Platform",
+    title: "DisasterReady",
     category: "Web development",
-    label: "05 / Team project",
+    label: "04 / Team project",
     graphic: "LEARN. PLAY. PREPARE.",
     summary:
       "An interactive platform for learning disaster preparedness through modules and games.",
     points: [
-      "Contributed responsive React learning modules and educational games, including development and testing.",
-      "Implemented Node.js functionality for managing and delivering educational content.",
+      "Refactored the React/Node.js codebase extensively around DRY/KISS principles, reducing duplication and improving maintainability; built educational games and fixed bugs across the platform.",
     ],
-    stack: ["React", "Node.js", "Educational games"],
+    stack: ["React", "Node.js", "Python"],
+  },
+  {
+    id: "credify",
+    title: "Credify",
+    category: "Web + Android",
+    label: "05 / Trust verification",
+    graphic: "VERIFY. UNDERSTAND.",
+    summary:
+      "Trust-verification workflows and a companion mobile security application.",
+    points: [
+      "Contributed across the application, including document-scanning and fraud-reporting workflows and Android suspicious-communication alerts.",
+      "Designed normalized MySQL tables and implemented backend verification logic to track document checks and fraud reports.",
+    ],
+    stack: ["Node.js", "Kotlin", "Supabase", "MySQL"],
   },
 ];
 
@@ -143,15 +153,17 @@ export const skills = [
     title: "Programming & AI",
     items: [
       "Python",
-      "C / C++",
       "Java",
+      "C / C++",
       "JavaScript",
+      "TypeScript",
       "Bash",
-      "Pandas",
-      "Pydantic",
       "LangChain",
       "LangGraph",
+      "Pydantic",
       "asyncio",
+      "Structured outputs",
+      "Prompt engineering",
     ],
   },
   {
@@ -160,43 +172,41 @@ export const skills = [
       "React",
       "Vite",
       "Node.js",
+      "Express",
       "REST APIs",
-      "HTML / CSS",
-      "Supabase",
-      "Firebase",
+      "HTML5 / CSS3",
       "MySQL",
+      "MongoDB / Mongoose",
+      "Supabase",
       "PostgreSQL",
-      "MongoDB",
       "JDBC",
+    ],
+  },
+  {
+    title: "Cloud & tools",
+    items: [
+      "AWS (CloudFront, IAM, EC2)",
+      "Git / GitHub",
+      "GitHub Actions",
+      "Linux",
+      "DSA & Algorithms",
+      "Database normalization",
+      "MS Office / Word / Excel",
+      "Video editing",
     ],
   },
   {
     title: "Mobile & embedded",
     items: [
       "Kotlin",
-      "Android Studio",
+      "Android",
       "BLE / GATT",
       "Foreground services",
       "ESP32",
-      "Arduino IDE",
-      "PID tuning",
+      "Arduino",
+      "PID control",
       "Sensor interfacing",
       "Circuit prototyping",
-    ],
-  },
-  {
-    title: "Foundations & tools",
-    items: [
-      "DSA",
-      "OOP",
-      "Operating systems",
-      "Computer networks",
-      "Database normalization",
-      "Git / GitHub",
-      "Linux",
-      "Vim",
-      "VS Code",
-      "Microsoft Office",
     ],
   },
 ];
@@ -208,7 +218,7 @@ export const education = {
   graduation: `Expected June ${graduationYear}`,
   cgpa: "7.85",
   coursework:
-    "Data structures and algorithms, object-oriented programming, operating systems, computer networks, computer architecture, database normalization, transaction management, UNIX, and advanced Java.",
+    "Data structures and algorithms, object-oriented programming, operating systems, computer networks, computer architecture, RDBMS, machine learning, database normalization, transaction management, UNIX/shell programming, and JDBC.",
 };
 export const achievements = [
   {
@@ -231,7 +241,7 @@ export const personal = {
   cricket:
     "Competitive bowling all-rounder; played in CAB U-13, U-15, U-18, and 2nd Division leagues.",
   chess:
-    "Trained at Dibyendu Barua Chess Academy and represented school in tournaments.",
+    "Trained at Dibyendu Barua Chess Academy and represented school in tournament competitions.",
   languages: ["English", "Bengali", "Hindi"],
   interests: ["Electric vehicles", "Gaming", "Fitness"],
 };
