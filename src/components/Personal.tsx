@@ -1,5 +1,10 @@
 import { personal } from "../content/portfolio";
 import { SectionHeading } from "./SectionHeading";
+
+/**
+ * Personal section showcasing extracurricular pursuits, sports,
+ * chess background, spoken languages, and everyday curiosities.
+ */
 export function Personal() {
   return (
     <section id="beyond-code" aria-label="Beyond code">

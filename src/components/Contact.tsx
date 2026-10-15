@@ -1,4 +1,9 @@
 import { profile } from "../content/portfolio";
+
+/**
+ * Call-to-action contact panel with direct email mailto links,
+ * resume download trigger, and styled interactive email badge.
+ */
 export function Contact() {
   return (
     <section
@@ -31,6 +36,11 @@ export function Contact() {
     </section>
   );
 }
+
+/**
+ * Global site footer with copyright, location info, external profiles,
+ * and keyboard-accessible scroll-to-top anchor.
+ */
 export function SiteFooter() {
   return (
     <footer className="site-footer">

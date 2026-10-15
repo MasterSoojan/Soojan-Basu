@@ -1,5 +1,10 @@
 import { achievements, education } from "../content/portfolio";
 import { SectionHeading } from "./SectionHeading";
+
+/**
+ * Education and competitive achievements section rendering degree
+ * credentials, CGPA grade, coursework, and hackathon outcomes.
+ */
 export function Education() {
   return (
     <section

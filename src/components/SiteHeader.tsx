@@ -8,16 +8,22 @@ const links = [
   ["skills", "Skills"],
   ["education", "Education"],
   ["contact", "Contact"],
-];
+] as const;
 
+/**
+ * Sticky command-bar header with accessible skip focus,
+ * keyboard-trapped mobile drawer (Escape to close), and theme toggle.
+ */
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
   const navigation = useRef<HTMLElement>(null);
   const menu = useRef<HTMLButtonElement>(null);
+
   useEffect(() => {
     if (open) navigation.current?.querySelector("a")?.focus();
   }, [open]);
+
   function visitSection(id: string) {
     setOpen(false);
     document.getElementById(id)?.focus({ preventScroll: true });

@@ -1,5 +1,10 @@
 import { projects } from "../content/portfolio";
 import { SectionHeading } from "./SectionHeading";
+
+/**
+ * Selected projects showcase rendering project art, description,
+ * key contributions, and tech stack tags.
+ */
 export function Projects() {
   return (
     <section id="projects" tabIndex={-1} aria-label="Selected projects">

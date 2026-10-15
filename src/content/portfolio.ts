@@ -2,7 +2,23 @@ const givenName = "Soojan";
 const familyName = "Basu";
 const graduationYear = 2027;
 
-export const profile = {
+/** Candidate identity and primary contact/social links. */
+export type Profile = {
+  givenName: string;
+  familyName: string;
+  name: string;
+  initials: string;
+  role: string;
+  location: string;
+  email: string;
+  github: string;
+  linkedin: string;
+  resume: string;
+  avatarUrl?: string;
+  introduction: string;
+};
+
+export const profile: Profile = {
   givenName,
   familyName,
   name: `${givenName} ${familyName}`,
@@ -13,11 +29,34 @@ export const profile = {
   github: "https://github.com/MasterSoojan",
   linkedin: "https://www.linkedin.com/in/soojan-basu-b75572291/",
   resume: "/Soojan_Basu_Resume.pdf",
+  avatarUrl: "",
   introduction:
     "BCA student with AI Product internship experience building Python-based LLM automation and report-generation workflows, alongside full-stack web and embedded-systems projects. Interested in software engineering, backend development, and AI applications; comfortable working across application logic, databases, and deployment configuration.",
-} as const;
+};
 
-export const experience = [
+export type ExperienceHighlight = {
+  category: string;
+  title: string;
+  description: string;
+  tags?: string[];
+};
+
+export type ExperienceItem = {
+  id: string;
+  company: string;
+  role: string;
+  headlineRole?: string;
+  shortCompany?: string;
+  dates: string;
+  mode: string;
+  title: string;
+  summary?: string;
+  points: string[];
+  highlights?: ExperienceHighlight[];
+  tags: string[];
+};
+
+export const experience: ExperienceItem[] = [
   {
     id: "ai-product",
     company: "Humanize Business Solutions Pvt Ltd",
@@ -29,6 +68,8 @@ export const experience = [
     dates: "1 Aug 2026 – 30 Oct 2026",
     mode: "Kolkata · On-site",
     title: "Turning AI reasoning into reliable workflows.",
+    summary:
+      "Architected Python-based LLM evaluation pipelines, concurrent asyncio scoring stages, and a custom full-stack CMS with AWS cloud delivery.",
     points: [
       "Developed a Python-based competitive analysis pipeline combining web-context extraction, LLM evaluation, evidence validation, structured outputs, and automated Word/PDF report generation.",
       "Used asyncio to evaluate New Implementation, Migration, and AMS Support stages concurrently; separated LLM-generated assessments from deterministic scoring, normalization, validation, N/A handling, and effort calculations.",
@@ -36,6 +77,50 @@ export const experience = [
       "Designed and implemented key functionality for a custom CMS powering Humanize's landing page, enabling authenticated content management through a React frontend and Node.js/Express/TypeScript backend with MongoDB Atlas/Mongoose.",
       "Applied DRY/KISS principles and maintainability-focused refactoring, directing implementation, reviewing logic, and making targeted code and UX changes with AI coding assistance.",
       "Configured and verified AWS deployment components, including CloudFront routing and cache invalidation; improved SEO fallback behavior, backend-failure handling, and multiple areas of the landing-page UX.",
+    ],
+    highlights: [
+      {
+        category: "AI & Automation",
+        title: "Competitive Analysis Pipeline",
+        description:
+          "Engineered a Python-based pipeline combining web-context extraction, LLM evaluation, evidence validation, structured outputs, and automated Word/PDF report generation.",
+        tags: ["Python", "LangChain", "Structured Outputs"],
+      },
+      {
+        category: "Async Backend",
+        title: "Concurrent Evaluation & Deterministic Scoring",
+        description:
+          "Used asyncio to evaluate New Implementation, Migration, and AMS Support stages concurrently; cleanly separated non-deterministic LLM assessments from deterministic scoring, validation, and effort calculations.",
+        tags: ["asyncio", "Python", "Scoring Logic"],
+      },
+      {
+        category: "AI Reliability",
+        title: "Multi-Engine Fallback & Guardrails",
+        description:
+          "Implemented fallback across multiple AI engines, standardizing structured capability assessments, evidence citation, system limitations, and AI-assisted effort estimates.",
+        tags: ["Multi-LLM", "Fault Tolerance", "Evaluation"],
+      },
+      {
+        category: "Full-Stack Web",
+        title: "Custom Landing-Page CMS",
+        description:
+          "Designed and implemented key functionality for an authenticated CMS powering Humanize's landing page with React, Node.js/Express/TypeScript, and MongoDB Atlas.",
+        tags: ["React", "TypeScript", "Node.js", "MongoDB"],
+      },
+      {
+        category: "Cloud & Edge",
+        title: "AWS CloudFront & Cache Invalidation",
+        description:
+          "Configured and verified AWS deployment components including CloudFront routing, cache invalidation, SEO fallback behavior, and backend-failure resilience.",
+        tags: ["AWS", "CloudFront", "CDN", "Resilience"],
+      },
+      {
+        category: "Engineering DX",
+        title: "DRY/KISS Refactoring & UX Polish",
+        description:
+          "Applied maintainability-focused refactoring, directing implementation, reviewing logic, and making targeted code and UX refinements with AI coding assistance.",
+        tags: ["DRY/KISS", "Code Review", "UX Polish"],
+      },
     ],
     tags: [
       "Python",
@@ -57,9 +142,27 @@ export const experience = [
     dates: "19 Jan 2026 – 30 Apr 2026",
     mode: "Remote",
     title: "Making product knowledge easier to use.",
+    summary:
+      "Produced comprehensive video walkthroughs and standardized technical documents for engineering and product teams.",
     points: [
       "Produced and organized video recordings for project documentation and AI Product team activities.",
       "Created and restructured .docx, .xlsx, and .pptx documents to improve organization, consistency, and usability.",
+    ],
+    highlights: [
+      {
+        category: "Knowledge Transfer",
+        title: "Technical Video Documentation",
+        description:
+          "Produced and organized video walkthroughs and technical recordings for project documentation and AI Product team activities.",
+        tags: ["Video Production", "Knowledge Transfer"],
+      },
+      {
+        category: "Asset Standardization",
+        title: "Product Asset Restructuring",
+        description:
+          "Created and restructured .docx, .xlsx, and .pptx documents to improve organization, consistency, and usability across product teams.",
+        tags: ["Technical Documentation", "MS Office"],
+      },
     ],
     tags: ["Product documentation", "Video production", "MS Office"],
   },
@@ -148,7 +251,13 @@ export const projects: Project[] = [
   },
 ];
 
-export const skills = [
+/** Categorized technical skills and tooling capabilities. */
+export type SkillGroup = {
+  title: string;
+  items: string[];
+};
+
+export const skills: SkillGroup[] = [
   {
     title: "Programming & AI",
     items: [
@@ -210,7 +319,19 @@ export const skills = [
     ],
   },
 ];
-export const education = {
+
+/** Degree, university, and academic coursework details. */
+export type Education = {
+  degree: string;
+  shortDegree: string;
+  institution: string;
+  graduationYear: number;
+  graduation: string;
+  cgpa: string;
+  coursework: string;
+};
+
+export const education: Education = {
   degree: "Bachelor of Computer Applications",
   shortDegree: "BCA",
   institution: "RCC Institute of Information Technology, Kolkata",
@@ -220,7 +341,15 @@ export const education = {
   coursework:
     "Data structures and algorithms, object-oriented programming, operating systems, computer networks, computer architecture, RDBMS, machine learning, database normalization, transaction management, UNIX/shell programming, and JDBC.",
 };
-export const achievements = [
+
+/** Hackathon and competitive achievements. */
+export type Achievement = {
+  event: string;
+  level: string;
+  outcome: string;
+};
+
+export const achievements: Achievement[] = [
   {
     event: "Smart India Hackathon 2023",
     level: "National",
@@ -237,7 +366,16 @@ export const achievements = [
     outcome: "Participant",
   },
 ];
-export const personal = {
+
+/** Personal interests, languages, and extracurricular background. */
+export type Personal = {
+  cricket: string;
+  chess: string;
+  languages: string[];
+  interests: string[];
+};
+
+export const personal: Personal = {
   cricket:
     "Competitive bowling all-rounder; played in CAB U-13, U-15, U-18, and 2nd Division leagues.",
   chess:

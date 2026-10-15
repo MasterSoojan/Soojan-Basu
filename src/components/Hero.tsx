@@ -2,6 +2,11 @@
 // Preserve React JSX when this component is imported by the Node-side renderer
 // test; Playwright otherwise rewrites JSX into its own component descriptors.
 import { profile, education, experience } from "../content/portfolio";
+
+/**
+ * Hero introduction section with candidate headline, call-to-actions,
+ * social links, high-contrast monogram/avatar frame, and quick facts.
+ */
 export function Hero() {
   return (
     <section
@@ -40,7 +45,15 @@ export function Hero() {
       </div>
       <aside className="hero-aside" aria-label="At a glance">
         <div className="monogram" aria-hidden="true">
-          <span>{profile.initials}</span>
+          {profile.avatarUrl ? (
+            <img
+              src={profile.avatarUrl}
+              alt={profile.name}
+              className="monogram-img"
+            />
+          ) : (
+            <span className="monogram-letters">{profile.initials}</span>
+          )}
         </div>
         <div className="glance">
           <span className="eyebrow">Currently</span>

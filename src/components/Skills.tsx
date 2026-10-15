@@ -1,5 +1,10 @@
 import { skills } from "../content/portfolio";
 import { SectionHeading } from "./SectionHeading";
+
+/**
+ * Technical toolkit section grouping languages, frameworks,
+ * databases, and embedded capabilities into pill-tag cards.
+ */
 export function Skills() {
   return (
     <section id="skills" tabIndex={-1} aria-label="Technical capabilities">
