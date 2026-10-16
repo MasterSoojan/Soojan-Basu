@@ -33,6 +33,32 @@ export function Projects() {
                   <li key={point}>{point}</li>
                 ))}
               </ul>
+              {(project.repoUrl || project.liveUrl) && (
+                <div className="project-actions">
+                  {project.repoUrl && (
+                    <a
+                      href={project.repoUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="project-action-link"
+                      aria-label={`${project.title} source code on GitHub`}
+                    >
+                      GitHub ↗
+                    </a>
+                  )}
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="project-action-link primary-action"
+                      aria-label={`${project.title} live deployment`}
+                    >
+                      Live Demo ↗
+                    </a>
+                  )}
+                </div>
+              )}
               <ul className="tags" aria-label="Technology stack">
                 {project.stack.map((tag) => (
                   <li key={tag}>{tag}</li>

@@ -1130,6 +1130,48 @@ h4 {
   margin-top: auto;
 }
 
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0.6rem 0 1rem;
+}
+
+.project-action-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.32rem 0.8rem;
+  border-radius: 9999px;
+  border: 1px solid var(--border);
+  background: var(--surface-soft);
+  color: var(--text);
+  font-size: 0.76rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.18s var(--ease-out), border-color 0.18s ease, background-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.project-action-link:hover,
+.project-action-link:focus-visible {
+  text-decoration: none;
+  transform: translateY(-1px);
+  border-color: var(--cyan);
+  background: var(--surface);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.14), 0 0 10px var(--glow-cyan);
+}
+
+:root[data-theme="light"] .project-action-link:hover,
+:root[data-theme="light"] .project-action-link:focus-visible {
+  border-color: var(--blue);
+  box-shadow: 0 4px 10px rgba(24, 78, 171, 0.1);
+}
+
+.project-action-link.primary-action {
+  background: linear-gradient(135deg, hsla(var(--blue-h), 80%, 45%, 0.2), hsla(var(--cyan-h), 80%, 45%, 0.2));
+  border-color: var(--cyan);
+}
+
 /* ==========================================================================
    SKILLS, EDUCATION & ACHIEVEMENTS
    ========================================================================== */
@@ -1252,36 +1294,101 @@ h4 {
   justify-content: center;
 }
 
-.email-link {
+.email-pill {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: center;
   margin-top: 1.6rem;
-  padding: 0.6rem 1.4rem;
+  padding: 0.28rem 0.35rem 0.28rem 1.25rem;
   border-radius: 9999px;
   border: 1px solid var(--border);
   background: var(--surface-soft);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transition:
+    transform 0.22s var(--ease-out),
+    border-color 0.22s ease,
+    box-shadow 0.22s ease;
+  max-width: 100%;
+}
+
+.email-pill:hover,
+.email-pill:focus-within {
+  transform: translateY(-2px);
+  border-color: var(--cyan);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2), 0 0 16px var(--glow-cyan);
+}
+
+.email-pill-link {
   color: var(--text);
-  overflow-wrap: anywhere;
   font-weight: 600;
   font-size: 0.95rem;
   letter-spacing: 0.01em;
   text-decoration: none;
-  transition:
-    transform 0.22s var(--ease-out),
-    border-color 0.22s ease,
-    color 0.22s ease,
-    box-shadow 0.22s ease;
+  overflow-wrap: anywhere;
+  padding-right: 0.85rem;
+  transition: color 0.18s ease;
 }
 
-.email-link:hover,
-.email-link:focus-visible {
+.email-pill-link:hover,
+.email-pill-link:focus-visible {
+  color: var(--cyan);
   text-decoration: none;
-  transform: translateY(-2px);
+  outline: none;
+}
+
+.email-pill-copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.42rem 0.9rem;
+  border-radius: 9999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition:
+    transform 0.18s var(--ease-out),
+    border-color 0.18s ease,
+    background-color 0.18s ease,
+    color 0.18s ease;
+}
+
+.email-pill-copy:hover,
+.email-pill-copy:focus-visible {
+  outline: none;
   border-color: var(--cyan);
   color: var(--cyan);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2), 0 0 16px var(--glow-cyan);
+  background: var(--surface-soft);
+  transform: translateY(-1px);
 }
+
+.email-pill-copy.is-copied {
+  border-color: var(--cyan);
+  background: rgba(0, 240, 255, 0.15);
+  color: var(--cyan);
+}
+
+.copy-icon {
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 
 .site-footer {
   display: flex;
@@ -1477,6 +1584,16 @@ h4 {
   }
   .social-links {
     gap: 0.6rem;
+  }
+  .email-pill {
+    flex-wrap: wrap;
+    border-radius: 1.25rem;
+    padding: 0.5rem 0.8rem;
+    gap: 0.4rem;
+  }
+  .email-pill-link {
+    padding-right: 0;
+    text-align: center;
   }
 }
 

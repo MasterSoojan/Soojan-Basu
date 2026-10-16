@@ -168,7 +168,8 @@ export const experience: ExperienceItem[] = [
   },
 ];
 
-type Project = {
+/** Project contribution entry with tech stack and optional repository/demo links. */
+export type Project = {
   id: string;
   title: string;
   category: string;
@@ -177,7 +178,10 @@ type Project = {
   stack: string[];
   label: string;
   graphic: string;
+  repoUrl?: string;
+  liveUrl?: string;
 };
+
 // Describes contributions in the supplied resume, including historical versions.
 // Add project URLs only after confirming the version being described.
 export const projects: Project[] = [
@@ -193,6 +197,7 @@ export const projects: Project[] = [
       "Integrated Supabase for relational data, storage, and authenticated administrative controls; configured deployment through GitHub and Vercel.",
     ],
     stack: ["React", "Vite", "Supabase", "Vercel"],
+    liveUrl: "https://www.vrcookiez.com/",
   },
   {
     id: "beacon",
@@ -234,6 +239,7 @@ export const projects: Project[] = [
       "Refactored the React/Node.js codebase extensively around DRY/KISS principles, reducing duplication and improving maintainability; built educational games and fixed bugs across the platform.",
     ],
     stack: ["React", "Node.js", "Python"],
+    repoUrl: "https://github.com/MasterSoojan/DisasterReady",
   },
   {
     id: "credify",
@@ -248,6 +254,8 @@ export const projects: Project[] = [
       "Designed normalized MySQL tables and implemented backend verification logic to track document checks and fraud reports.",
     ],
     stack: ["Node.js", "Kotlin", "Supabase", "MySQL"],
+    repoUrl: "https://github.com/MasterSoojan/Credify",
+    liveUrl: "https://credify-eight.vercel.app/",
   },
 ];
 
