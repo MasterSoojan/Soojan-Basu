@@ -10,7 +10,7 @@ export function Skills() {
     <section id="skills" tabIndex={-1} aria-label="Technical capabilities">
       <SectionHeading
         number="03 / Toolkit"
-        title="Strong foundations. A versatile toolkit."
+        title="Technologies I build with."
       />
       <div className="two-column">
         {skills.map((group) => (

@@ -64,13 +64,14 @@ export function Contact() {
           type="button"
           className={`email-pill-copy ${copied ? "is-copied" : ""}`}
           onClick={handleCopy}
+          title={copied ? "Copied to clipboard!" : "Copy email address"}
           aria-label={copied ? "Email address copied to clipboard" : "Copy email address"}
         >
           {copied ? (
             <svg
               className="copy-icon"
-              width="14"
-              height="14"
+              width="15"
+              height="15"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -84,8 +85,8 @@ export function Contact() {
           ) : (
             <svg
               className="copy-icon"
-              width="14"
-              height="14"
+              width="15"
+              height="15"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -98,7 +99,6 @@ export function Contact() {
               <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
             </svg>
           )}
-          <span>{copied ? "Copied!" : "Copy"}</span>
         </button>
       </div>
       <div className="sr-only" aria-live="polite">
