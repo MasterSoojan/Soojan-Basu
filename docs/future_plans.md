@@ -18,6 +18,8 @@ This document outlines the planned roadmap, feature backlogs, DevOps enhancement
   * Unified single-pill layout with `supersoojanbasu@gmail.com` and clipboard copy button with instantaneous visual toast feedback (*"Copied!"*) and accessible screen-reader announcement.
 
 ### Phase 2: User Experience Polish
+* [x] **HumanizeTech UI Design Variant (`humanize_UI` branch)**:
+  * Established specialized branch with Humanize Royal Blue (`#1460d0`) to Lime Green (`#7ec500`) signature gradients, 2px topbar accent line, accent-bar eyebrows, and enterprise contrast.
 * [ ] **Print Stylesheet (`@media print`)**:
   * Add clean print styles that format the portfolio into a clean, one-page executive resume summary when pressing `Ctrl + P`.
 * [ ] **Interactive System Architecture Walkthroughs**:

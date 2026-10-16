@@ -29,16 +29,19 @@ Open [http://localhost:5173](http://localhost:5173) in your browser. Any changes
 
 ## 2. Branching & Git Strategy
 
-We maintain two primary branches:
+We maintain three active branches:
 
 ```text
-main      ───●───●───────●─── (Production: triggers Netlify build)
-              \         /
-testing        ●───●───●     (Feature sandbox: UI tweaks, reviews)
+main           ───●───●───────●─── (Production: triggers Netlify build)
+                   \         /
+testing             ●───●───●     (Feature sandbox: UI tweaks, reviews)
+                     \
+humanize_UI           ●───●       (HumanizeTech brand UI: Royal Blue & Lime Green)
 ```
 
 * **`main`**: Production branch. Every push to `main` automatically triggers Netlify's build and deploys to [soojan-basu.netlify.app](https://soojan-basu.netlify.app/).
-* **`testing`**: Sandbox branch for experimenting with new styles, sections, and review passes.
+* **`testing`**: Sandbox branch for standard executive cyber/clean UI.
+* **`humanize_UI`**: Specialized design branch adopting the [humanizetech.ai](https://www.humanizetech.ai/) design system (Royal Blue `#1460d0` to Lime Green `#7ec500` brand gradients, topbar 2px accent line, and accent-bar eyebrows).
 
 ### Switching Between Branches
 ```bash

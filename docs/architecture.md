@@ -106,6 +106,10 @@ Every surface, border, gradient, glow, and hover state is procedurally derived f
 | `--muted` | `hsl(216, 30%, 75%)` | `hsl(216, 20%, 34%)` | Secondary metadata ($\ge 5.2:1$ contrast) |
 | `--cyan` / `--blue` | Saturated glow accents | Deep editorial jewel tones | Interactive highlights, borders, and focus rings |
 
+### Branch Variants & Color Systems
+* **`testing` branch**: Cyber/Executive theme utilizing deep jewel tones (`#2059ac` dark blue and `#006878` dark green in light mode) with solid hero typography.
+* **`humanize_UI` branch**: Brand design language mirroring [humanizetech.ai](https://www.humanizetech.ai/) with Sora typography, signature Royal Blue (`#1460d0`) and Lime Green (`#7ec500`) dual gradients, 2px topbar accent lines, and horizontal accent-bar eyebrows.
+
 ---
 
 ## 5. Accessibility & Navigation Contracts
